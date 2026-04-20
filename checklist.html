@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist · The Master Plan</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <a class="back-link" href="../index.html">← Back to home</a>
+
+  <header class="page-header">
+    <h1><em>Checklist</em></h1>
+    <p class="subtitle">Actionable items for the current phase</p>
+  </header>
+
+  <div id="status-bar"></div>
+
+  <p class="intro-block" id="checklist-intro"></p>
+
+  <div id="checklist-content"></div>
+
+  <div style="margin-top:60px;text-align:center;">
+    <button id="reset-btn" style="font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--burgundy);background:transparent;border:1px solid var(--burgundy);padding:8px 18px;cursor:pointer;">Reset checks for this phase</button>
+  </div>
+
+  <footer>Checks persist in browser storage — they survive reloads but are per-device</footer>
+
+</div>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/script.js"></script>
+<script>
+  MasterPlan.renderStatusBar({ pathPrefix: '../' });
+
+  const SECTION_LABELS = {
+    health: 'Health', care: 'Personal Care', wardrobe: 'Wardrobe', training: 'Training',
+  };
+  const KIND_ORDER = ['routine', 'habit', 'milestone', 'purchase', 'reference'];
+  const KIND_LABEL = {
+    routine: 'Routine', habit: 'Habit', milestone: 'Milestone',
+    purchase: 'Purchase', reference: 'Reference',
+  };
+
+  function render(phase) {
+    const container = document.getElementById('checklist-content');
+    container.innerHTML = '';
+
+    const info = MasterPlanData.phases.find(p => p.n === phase);
+    document.getElementById('checklist-intro').textContent = info
+      ? `Phase ${info.n} (${info.name}) — ${info.summary}`
+      : '';
+
+    const items = MasterPlanData.byPhase(phase);
+    if (items.length === 0) {
+      container.innerHTML = '<p class="muted">No actionable items for this phase yet.</p>';
+      return;
+    }
+
+    // Group by section
+    const groups = MasterPlanData.groupBySection(items);
+    ['care', 'health', 'wardrobe', 'training'].forEach(sec => {
+      const list = groups[sec];
+      if (!list) return;
+
+      const h2 = document.createElement('h2');
+      h2.textContent = SECTION_LABELS[sec];
+      container.appendChild(h2);
+
+      // Group by kind within section
+      const kindGroups = {};
+      list.forEach(item => {
+        const k = item.kind || 'reference';
+        if (!kindGroups[k]) kindGroups[k] = [];
+        kindGroups[k].push(item);
+      });
+
+      KIND_ORDER.forEach(kind => {
+        const forKind = kindGroups[kind];
+        if (!forKind || forKind.length === 0) return;
+        const h3 = document.createElement('h3');
+        h3.textContent = KIND_LABEL[kind];
+        container.appendChild(h3);
+
+        const ul = document.createElement('ul');
+        ul.className = 'checklist-group';
+        forKind.forEach(item => {
+          const li = document.createElement('li');
+          li.className = 'check-item';
+          // Namespace per phase so different phases track independently
+          const cbId = `check-${phase}-${item.id}`;
+          const cb = document.createElement('input');
+          cb.type = 'checkbox';
+          cb.id = cbId;
+          cb.setAttribute('data-id', cbId);
+
+          const label = document.createElement('label');
+          label.htmlFor = cbId;
+          label.textContent = item.text;
+
+          li.appendChild(cb);
+          li.appendChild(label);
+          ul.appendChild(li);
+        });
+        container.appendChild(ul);
+      });
+    });
+
+    // Re-bind persistence after dynamic content insert
+    const checks = MasterPlan.getChecks();
+    container.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      const id = cb.getAttribute('data-id');
+      if (checks[id]) cb.checked = true;
+      cb.addEventListener('change', () => MasterPlan.setCheck(id, cb.checked));
+    });
+  }
+
+  render(MasterPlan.getCurrentPhase());
+  document.addEventListener('phase-change', e => render(e.detail.phase));
+
+  document.getElementById('reset-btn').addEventListener('click', () => {
+    if (!confirm('Clear all checks for the current phase? This cannot be undone.')) return;
+    const phase = MasterPlan.getCurrentPhase();
+    const prefix = `check-${phase}-`;
+    const checks = MasterPlan.getChecks();
+    Object.keys(checks).forEach(k => {
+      if (k.startsWith(prefix)) delete checks[k];
+    });
+    localStorage.setItem('master-plan:checks', JSON.stringify(checks));
+    render(phase);
+  });
+</script>
+</body>
+</html>
