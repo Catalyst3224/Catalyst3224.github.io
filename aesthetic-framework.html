@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aesthetic Framework · The Master Plan</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .axis-grid {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+    margin: 50px auto 60px;
+    border: 1px solid var(--rule);
+    background:
+      linear-gradient(to right, transparent 49.5%, var(--rule) 49.5%, var(--rule) 50.5%, transparent 50.5%),
+      linear-gradient(to bottom, transparent 49.5%, var(--rule) 49.5%, var(--rule) 50.5%, transparent 50.5%),
+      var(--cream);
+  }
+  .axis-label {
+    position: absolute;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+  .axis-top    { top: -26px; left: 50%; transform: translateX(-50%); }
+  .axis-bottom { bottom: -26px; left: 50%; transform: translateX(-50%); }
+  .axis-left   { top: 50%; left: -8px; transform: translate(-100%, -50%); white-space: nowrap; }
+  .axis-right  { top: 50%; right: -8px; transform: translate(100%, -50%); white-space: nowrap; }
+  .quadrant-label {
+    position: absolute;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--charcoal);
+    line-height: 1.35;
+    text-align: center;
+    padding: 12px;
+  }
+  .q-tl { top: 6%; left: 3%; width: 44%; }
+  .q-tr { top: 6%; right: 3%; width: 44%; }
+  .q-bl { bottom: 6%; left: 3%; width: 44%; }
+  .q-br { bottom: 6%; right: 3%; width: 44%; }
+  .quadrant-label .q-key {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  @media (max-width: 600px) {
+    .axis-grid { margin: 60px auto 50px; }
+    .quadrant-label { font-size: 13px; padding: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Master Plan</a><span class="sep">/</span>
+    <a href="index.html">Wardrobe</a><span class="sep">/</span>Aesthetic Framework
+  </div>
+
+  <header class="page-header">
+    <h1>Aesthetic <em>Framework</em></h1>
+    <p class="subtitle">The shape of what we're building toward, and the vocabulary for describing it</p>
+  </header>
+
+  <div id="status-bar"></div>
+
+  <blockquote>
+    Literary romantic with old money restraint and a slightly melancholy, ethereal edge. Candlelit libraries, autumn afternoons, silk ribbons, wool coats, the feeling of a French film from the 1960s.
+  </blockquote>
+
+  <div class="section-label">Goal</div>
+  <h2 style="margin-top:14px;">What the framework is for</h2>
+  <p>
+    A working vocabulary. The framework does two jobs: it describes a register — elegant-formal, sexy-casual, and so on — cleanly enough that an outfit, a figure, or a mood can be placed on it; and it names a synthesized aesthetic so purchasing decisions have a target to evaluate against. Neither job is possible without both halves: the dual axis gives the grid, the synthesis gives the location.
+  </p>
+
+  <div class="section-label">Theory</div>
+  <h2 style="margin-top:14px;">The dual-axis framework</h2>
+  <p>
+    High/low femininity as a single spectrum does too much work. It tries to describe formality and restraint at the same time, and those aren't the same variable — a sexy cocktail dress and a polo shirt at a country club are both some kind of <em class="term">not casual</em>, but they're operating on different axes entirely.
+  </p>
+  <p>
+    The better framing treats <strong>elegance ↔ sexiness</strong> and <strong>formality ↔ casualness</strong> as two independent axes. Every outfit, every figure, every register sits somewhere on the grid rather than on a single line.
+  </p>
+
+  <div class="axis-grid" role="img" aria-label="Dual axis: elegant/sexy by formal/casual">
+    <span class="axis-label axis-top">Formal</span>
+    <span class="axis-label axis-bottom">Casual</span>
+    <span class="axis-label axis-left">Elegant</span>
+    <span class="axis-label axis-right">Sexy</span>
+    <div class="quadrant-label q-tl">
+      <span class="q-key">Elegant · Formal</span>
+      dinner out, theatre,<br>meeting parents
+    </div>
+    <div class="quadrant-label q-tr">
+      <span class="q-key">Sexy · Formal</span>
+      a date, a party,<br>wedding guest
+    </div>
+    <div class="quadrant-label q-bl">
+      <span class="q-key">Elegant · Casual</span>
+      coffee, museum,<br>working from somewhere public
+    </div>
+    <div class="quadrant-label q-br">
+      <span class="q-key">Sexy · Casual</span>
+      casual date, a bar,<br>concert, house party
+    </div>
+  </div>
+
+  <p>
+    Things slide around on this grid rather than sitting at fixed points. A slip dress is elegant-formal alone in the evening; add a chunky cardigan and sneakers over it and it lands in elegant-casual. The same figure can range across several quadrants across a career — see the <a href="style-icons.html">Style Icons</a> placements. Outfits in the <a href="capsule/lookbook.html">Lookbook</a> are tagged with their quadrant so the grid becomes usable rather than theoretical.
+  </p>
+
+  <div class="callout quiet">
+    <strong>What the framework <em>doesn't</em> capture</strong>
+    Age register (youthful vs. matured), cultural register (Parisian vs. Tokyo vs. New England prep), price tier, seasonality. The axes are about <em class="term">mode</em>, not about everything. A framework that explains everything explains nothing.
+  </div>
+
+  <div class="section-label">Synthesis</div>
+  <h2 style="margin-top:14px;">The synthesized direction</h2>
+  <p>
+    The center of gravity sits in the <strong>elegant-casual</strong> quadrant, with extensions upward into elegant-formal (the wool coat, the silk blouse, the Mary Janes) and occasional moves into sexy-formal for specific occasions (slip dress, heels, statement jewelry). Sexy-casual is available but rarely the daily register.
+  </p>
+  <p>
+    Said another way: the question the wardrobe keeps answering is <em class="term">refined without trying, considered without stiff, feminine without costume</em>. The literary, old-money, and French-film references all point to the same thing — restraint that reads as intentional rather than timid.
+  </p>
+
+  <div class="section-label">Named Aesthetics</div>
+  <h2 style="margin-top:14px;">Named aesthetics — a palette to draw from</h2>
+  <p>
+    These are movements and microstyles that have enough cultural weight to serve as search terms, reference frames, and vocabulary. Not all apply equally — use them to locate a look and to find image references, rather than as a checklist to fulfill.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:28%;">Aesthetic</th>
+        <th style="width:32%;">Core feeling</th>
+        <th>Key elements</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Angelcore</td><td>Soft, divine, otherworldly</td><td>White and ivory, ethereal fabrics, delicate details, wings motif</td></tr>
+      <tr><td>Coquette — Vintage Americana</td><td>Nostalgic femininity</td><td>Gingham, denim, ribbon details, 1950s–60s silhouettes</td></tr>
+      <tr><td>Coquette — Dark / Vamp</td><td>Seductive melancholy</td><td>Deep jewel tones, lace, velvet, darkness with femininity</td></tr>
+      <tr><td>Coquette — Messy French Girl</td><td>Effortless and undone</td><td>Slightly imperfect, Parisian, quality basics worn loosely</td></tr>
+      <tr><td>Coquette — Gloomy / Dark Sweet</td><td>Sweet but shadowed</td><td>Pastels with dark undercurrent, ribbons, layering</td></tr>
+      <tr><td>Coquette — Romantic / Academia</td><td>Intellectual romance</td><td>Books, layering, lace, warmth, antique feeling</td></tr>
+      <tr><td>Cottagecore</td><td>Rural romantic idyll</td><td>Floral prints, linen, natural fabrics, soft and pastoral</td></tr>
+      <tr><td>Dark Academia</td><td>Scholarly and atmospheric</td><td>Tweed, plaid, earth tones, layering, literary references</td></tr>
+      <tr><td>Ethereal</td><td>Otherworldly softness</td><td>Sheer fabrics, muted tones, flowing silhouettes, dreamlike</td></tr>
+      <tr><td>Light Academia</td><td>Warmer scholarly aesthetic</td><td>Cream, tan, warm neutrals, Oxford-adjacent, soft intellectualism</td></tr>
+      <tr><td>Old Money</td><td>Quiet inherited elegance</td><td>Quality over flash, classic cuts, restraint, polo and tennis</td></tr>
+      <tr><td>BCBG (Bon Chic Bon Genre)</td><td>French upper-class polish</td><td>Tailored, understated, navy and white, classic French elegance</td></tr>
+      <tr><td>Cayetana</td><td>Spanish aristocratic</td><td>Bold florals, structured, heritage quality, slightly dramatic</td></tr>
+      <tr><td>Maillard Style</td><td>Rich warm depth</td><td>Deep browns, caramels, layered textures, autumnal richness</td></tr>
+      <tr><td>Southern Belle / Prep</td><td>Gracious and polished</td><td>Pastels, florals, pearl details, structured femininity</td></tr>
+      <tr><td>Tenniscore</td><td>Athletic elegance</td><td>Pleated skirts, polo shirts, white and cream, sporty refinement</td></tr>
+      <tr><td>Japanese Ivy</td><td>Tokyo preppy</td><td>Plaid, loafers, quality basics, East-meets-West classic prep</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-label">Color direction</div>
+  <h2 style="margin-top:14px;">Cool undertones throughout</h2>
+  <p>
+    Undertone has been confirmed cool — blue-purple veins, silver reads better than gold, aesthetic preference for cool tones predates the framework. This translates directly into product and piece selection.
+  </p>
+  <ul>
+    <li><strong>Foundation/concealer</strong>: rosy/cool or neutral. Avoid golden or warm-labeled.</li>
+    <li><strong>Blush</strong>: cool pinks, mauves, soft berries. Avoid peach and coral.</li>
+    <li><strong>Eyeshadow</strong>: lilac, taupe, cool brown, grey, rose, soft blue.</li>
+    <li><strong>Highlight</strong>: silver-based or pearl. Not gold or champagne.</li>
+    <li><strong>Lip</strong>: cool pink, mauve, berry. If red, blue-based rather than orange-based.</li>
+    <li><strong>Jewelry</strong>: silver hardware throughout. Pearls work especially well.</li>
+    <li><strong>Clothing palette</strong>: black, cream, ivory, charcoal, navy, forest green, burgundy, dusty rose, lavender. No warm browns, no terracotta, no mustard.</li>
+  </ul>
+
+  <div class="section-label">Research</div>
+  <h2 style="margin-top:14px;">Search terms for research</h2>
+  <p>Vocabulary for finding the right images and retailer results rather than generic ones.</p>
+  <ul>
+    <li>Quiet luxury feminine · Old money aesthetic outfit</li>
+    <li>Dark academia feminine · Romantic academia</li>
+    <li>Coquette aesthetic clothing · French girl style · BCBG</li>
+    <li>Cottagecore urban / polished · K-fashion feminine · Japanese Ivy</li>
+    <li>Tenniscore outfit · Ethereal feminine</li>
+    <li>AestheticWiki — useful for the taxonomy itself; categorizes and cross-references microstyles</li>
+  </ul>
+
+  <div class="section-label">Inspo overview</div>
+  <h2 style="margin-top:14px;">Inspo figures across the grid</h2>
+  <p>
+    Full treatment is on the <a href="style-icons.html">Style Icons</a> page with dual-axis placements and takeaways. The figures currently in the inspo set span the grid rather than clustering in one place:
+  </p>
+  <ul>
+    <li><strong>Amal Clooney</strong>, <strong>Eva Marie Saint</strong> — almost exclusively elegant-formal</li>
+    <li><strong>Princess Catherine</strong> — elegant-formal default, elegant-casual when she steps down</li>
+    <li><strong>Anne Hathaway</strong> — elegant-formal and sexy-formal; occasional elegant-casual</li>
+    <li><strong>France Gall</strong>, <strong>Ariana Grande</strong> — elegant-casual home base, ranging freely</li>
+    <li><strong>Ana de Armas</strong> — sexy-formal home base, comfortable elegant-formal</li>
+  </ul>
+  <p>
+    Hindash is explicitly <em class="term">not</em> in the inspo set. Their technique is useful as a makeup reference (see <a href="../care/makeup.html">Makeup</a>), but the aesthetic itself isn't a personal target.
+  </p>
+
+  <footer>Aesthetic Framework · Wardrobe</footer>
+
+</div>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/script.js"></script>
+<script>MasterPlan.renderStatusBar({ pathPrefix: '../' });</script>
+</body>
+</html>
