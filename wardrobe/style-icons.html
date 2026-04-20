@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Icons · The Master Plan</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .axis-grid {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    aspect-ratio: 1 / 1;
+    margin: 60px auto;
+    border: 1px solid var(--rule);
+    background:
+      linear-gradient(to right, transparent 49.5%, var(--rule) 49.5%, var(--rule) 50.5%, transparent 50.5%),
+      linear-gradient(to bottom, transparent 49.5%, var(--rule) 49.5%, var(--rule) 50.5%, transparent 50.5%),
+      var(--cream);
+  }
+  .axis-label {
+    position: absolute;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+  }
+  .axis-top { top: -26px; left: 50%; transform: translateX(-50%); }
+  .axis-bottom { bottom: -26px; left: 50%; transform: translateX(-50%); }
+  .axis-left { top: 50%; left: -8px; transform: translate(-100%, -50%); white-space: nowrap; }
+  .axis-right { top: 50%; right: -8px; transform: translate(100%, -50%); white-space: nowrap; }
+  .icon-pin {
+    position: absolute;
+    font-family: var(--serif);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--burgundy);
+    background: var(--ivory);
+    padding: 3px 10px;
+    border: 1px solid var(--burgundy);
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  .icon-pin.range {
+    border-style: dashed;
+  }
+  .icon-pin.secondary {
+    background: var(--cream);
+    color: var(--charcoal);
+    border-color: var(--muted);
+    font-size: 12px;
+  }
+  .icon-pin .arrow {
+    color: var(--muted);
+    margin: 0 4px;
+    font-style: normal;
+  }
+  .icon-figure {
+    margin: 40px 0;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .icon-figure:last-of-type { border-bottom: none; }
+  .icon-name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .icon-placement {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  @media (max-width: 600px) {
+    .icon-pin { font-size: 12px; padding: 2px 7px; }
+    .icon-pin.secondary { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Master Plan</a><span class="sep">/</span>
+    <a href="index.html">Wardrobe</a><span class="sep">/</span>Style Icons
+  </div>
+
+  <header class="page-header">
+    <h1>Style <em>Icons</em></h1>
+    <p class="subtitle">Reference figures placed on the dual axes, with what they actually teach</p>
+  </header>
+
+  <div id="status-bar"></div>
+
+  <blockquote>
+    Study their choices for practical direction. The question isn't who you want to <em class="term">look like</em> — it's what specific decisions they make, and which of those translate.
+  </blockquote>
+
+  <div class="section-label">Overview</div>
+  <h2 style="margin-top:14px;">Placements on the grid</h2>
+  <p>
+    The figures cluster heavily on the elegant half — this is the direction of the wardrobe as a whole. Solid pins mark primary register; dashed pins show figures who range meaningfully across quadrants.
+  </p>
+
+  <div class="axis-grid" role="img" aria-label="Style icons placed on elegant/sexy by formal/casual axes">
+    <span class="axis-label axis-top">Formal</span>
+    <span class="axis-label axis-bottom">Casual</span>
+    <span class="axis-label axis-left">Elegant</span>
+    <span class="axis-label axis-right">Sexy</span>
+
+    <!-- Elegant-Formal cluster -->
+    <span class="icon-pin" style="top: 18%; left: 22%;">Amal Clooney</span>
+    <span class="icon-pin" style="top: 26%; left: 30%;">Eva Marie Saint</span>
+    <span class="icon-pin range" style="top: 32%; left: 18%;">Princess Catherine</span>
+
+    <!-- Anne Hathaway spans EF to SF -->
+    <span class="icon-pin range" style="top: 20%; left: 48%;">Anne Hathaway</span>
+
+    <!-- Sexy-Formal -->
+    <span class="icon-pin" style="top: 30%; left: 72%;">Ana de Armas</span>
+
+    <!-- Elegant-Casual -->
+    <span class="icon-pin" style="top: 72%; left: 26%;">France Gall</span>
+    <span class="icon-pin range" style="top: 62%; left: 36%;">Ariana Grande</span>
+  </div>
+
+  <p class="muted small center">Solid border = primary register · Dashed border = ranges meaningfully</p>
+
+  <div class="section-label">Detail</div>
+  <h2 style="margin-top:14px;">The figures, individually</h2>
+
+  <div class="icon-figure">
+    <div class="icon-name">Amal Clooney</div>
+    <div class="icon-placement">Elegant · Formal (almost exclusively)</div>
+    <p><strong>Why she resonates:</strong> Impeccably tailored, quietly powerful, never tries too hard.</p>
+    <p><strong>Key takeaways:</strong> Invest in structure. Let quality speak. Avoid trend-chasing. Tailoring does more work than embellishment.</p>
+  </div>
+
+  <div class="icon-figure">
+    <div class="icon-name">Princess Catherine</div>
+    <div class="icon-placement">Elegant · Formal default, Elegant · Casual when she steps down</div>
+    <p><strong>Why she resonates:</strong> Classic English elegance, always considered and appropriate.</p>
+    <p><strong>Key takeaways:</strong> Clean lines, quality fabrics, occasion-appropriate dressing. Coat-as-outerwear-statement is the signature move.</p>
+  </div>
+
+  <div class="icon-figure">
+    <div class="icon-name">Anne Hathaway</div>
+    <div class="icon-placement">Ranges across Elegant · Formal and Sexy · Formal; occasional Elegant · Casual</div>
+    <p><strong>Why she resonates:</strong> Romantic with an edge, handles both dramatic and understated.</p>
+    <p><strong>Key takeaways:</strong> Range is possible. Dark and soft can coexist in one wardrobe without incoherence. Willingness to take real aesthetic risks on the red carpet, then pull back to restraint the next day.</p>
+  </div>
+
+  <div class="icon-figure">
+    <div class="icon-name">France Gall</div>
+    <div class="icon-placement">Elegant · Casual</div>
+    <p><strong>Why she resonates:</strong> 1960s French yé-yé — soft and feminine with melancholy sweetness. The emotional core of the aesthetic.</p>
+    <p><strong>Key takeaways:</strong> Wistful, pretty, sincere. Femininity without performance. Movement and softness over structure. The synthesized aesthetic's "French film from the 1960s" points directly here.</p>
+  </div>
+
+  <div class="icon-figure">
+    <div class="icon-name">Eva Marie Saint</div>
+    <div class="icon-placement">Elegant · Formal</div>
+    <p><strong>Why she resonates:</strong> Old Hollywood restraint, Grace Kelly adjacent.</p>
+    <p><strong>Key takeaways:</strong> Refinement over revelation. Elegance ages beautifully. Silhouette and fabric quality are doing the work — detail is almost absent.</p>
+  </div>
+
+  <div class="icon-figure">
+    <div class="icon-name">Ariana Grande</div>
+    <div class="icon-placement">Elegant · Casual home base, ranges freely across all quadrants</div>
+    <p><strong>Why she resonates:</strong> The clearest example of the elegant-casual register done well — oversized hoodie and thigh-high boots is considered, not accidental. Moves into every other quadrant comfortably when the occasion requires.</p>
+    <p><strong>Key takeaways:</strong> Proportion play (oversized top with minimal bottom, or vice versa). Very feminine pieces worn without reading as costume. The high ponytail as a consistent silhouette choice across an entire career. The <em>Positions</em> video is a single-source reference spanning several quadrants; useful as comprehensive inspo rather than just a moment.</p>
+  </div>
+
+  <div class="icon-figure">
+    <div class="icon-name">Ana de Armas</div>
+    <div class="icon-placement">Sexy · Formal home base, comfortable Elegant · Formal</div>
+    <p><strong>Why she resonates:</strong> Makes sexy-formal look intentional and sophisticated rather than costume-y. Carries the elegant-formal register too — <em>No Time to Die</em> is the textbook example of both operating at once.</p>
+    <p><strong>Key takeaways:</strong> Matching jewelry sets as a complete thought (rather than mixed pieces). Jewelry framing the neckline rather than competing with it. The Chopard set in NTTD is aspirational reference — specific piece unreachable, but the principles (scale, distinctive silhouette, framing over competing) are transferable at any price point. Coherence comes partly from the wearer, but the design decisions are real and separable.</p>
+  </div>
+
+  <div class="section-label">Not on the list</div>
+  <h2 style="margin-top:14px;">Hindash — technique, not inspo</h2>
+  <p>
+    Hindash's makeup work is genuinely useful as a <a href="../care/makeup.html">technique reference</a> — genderless application philosophy, a real eye for cool-toned looks (see Modern Lilac Frost), a working approach to light and shadow. But the aesthetic itself isn't a personal target. Respect for the work without wanting to look like them. This distinction matters for how the Makeup section uses them: Hindash's techniques are transferable, Hindash's overall look isn't the destination.
+  </p>
+
+  <footer>Style Icons · Wardrobe</footer>
+
+</div>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/script.js"></script>
+<script>MasterPlan.renderStatusBar({ pathPrefix: '../' });</script>
+</body>
+</html>
