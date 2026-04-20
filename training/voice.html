@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice · The Master Plan</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .milestone-ladder {
+    margin: 24px 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: milestone;
+  }
+  .milestone-ladder li {
+    position: relative;
+    padding: 20px 24px 20px 62px;
+    margin-bottom: 8px;
+    background: var(--cream);
+    border-left: 2px solid var(--rule);
+    counter-increment: milestone;
+  }
+  .milestone-ladder li::before {
+    content: counter(milestone);
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--burgundy);
+    color: var(--ivory);
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .milestone-ladder li .m-title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .milestone-ladder li .m-body {
+    font-size: 14px;
+    color: var(--charcoal);
+    line-height: 1.55;
+  }
+  .stage-key {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .stage-key li {
+    padding: 10px 14px;
+    background: var(--cream);
+    border-left: 2px solid var(--burgundy-dim);
+    font-size: 14px;
+  }
+  .stage-key li strong {
+    display: inline-block;
+    min-width: 110px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-right: 14px;
+  }
+  .state-block {
+    margin: 16px 0;
+    padding: 20px 24px;
+    background: var(--ivory);
+    border: 1px dashed var(--rule);
+  }
+  .state-block .state-date {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Master Plan</a><span class="sep">/</span>
+    <a href="index.html">Training</a><span class="sep">/</span>Voice
+  </div>
+
+  <header class="page-header">
+    <h1><em>Voice</em></h1>
+    <p class="subtitle">The largest subsection — pitch, resonance, intonation, integration</p>
+  </header>
+
+  <div id="status-bar"></div>
+
+  <blockquote>
+    Voice is the skill most often identified as the difference between being read correctly or not. It's trainable — that's well established. The work is slow and needs to be done consistently over months to years. Progress isn't linear; plateaus are normal and don't mean failure.
+  </blockquote>
+
+  <div class="section-label">Overview</div>
+  <h2 style="margin-top:14px;">What voice training actually is</h2>
+  <p>
+    Two separate skills that people conflate: <strong>pitch</strong> (how high or low the voice sits) and <strong>resonance</strong> (where in the body the voice vibrates). Pitch alone doesn't feminize a voice — a high-pitched but chest-resonant voice reads as a high-pitched male voice. Resonance matters as much or more than pitch. Real work involves both, plus intonation (the musical shape of sentences) and integration (holding the voice under emotional or fatigue stress).
+  </p>
+  <p>
+    Honest framing: voice training typically shows first results in weeks, working stability in months, and genuine integration in a year or two. This is a long skill, not a sprint.
+  </p>
+
+  <div class="section-label">Prerequisites</div>
+  <h2 style="margin-top:14px;">Before starting</h2>
+  <ul>
+    <li><strong>Private space to practice.</strong> Bedroom with door closed is enough. Voice training is vulnerable — doing it where you can be overheard defeats the point.</li>
+    <li><strong>Something to record on.</strong> Phone's voice memo app is fine. Self-recording is how you hear your voice from outside; the in-head version is unreliable.</li>
+    <li><strong>No pre-existing vocal damage or pain.</strong> If the voice feels strained, stop. Voice training should never hurt. Hoarseness, pain, or loss of voice after practice means something is being done wrong.</li>
+    <li><strong>Accept the bad recordings.</strong> Early recordings will sound terrible to your own ears. Listen anyway. The ear gets calibrated only through hearing yourself.</li>
+  </ul>
+
+  <div class="section-label">Stage framework</div>
+  <h2 style="margin-top:14px;">The five-stage progression</h2>
+  <p>
+    This framework maps across all training subsections, not just voice. Milestones within each subsection are measured against these stages.
+  </p>
+  <ul class="stage-key">
+    <li><strong>Introduced</strong> You're aware of it, have tried it once or twice, can't reliably do it.</li>
+    <li><strong>Deliberate</strong> You can do it when focused, but it requires active attention. Drops the moment you stop thinking about it.</li>
+    <li><strong>Supported</strong> You can do it in controlled or safe contexts consistently — home, with a familiar person, in low-stress situations.</li>
+    <li><strong>Default</strong> It happens without conscious thought in low-stakes situations.</li>
+    <li><strong>Integrated</strong> Stable across high-stakes, fatigued, or emotional contexts. The real finish line.</li>
+  </ul>
+
+  <div class="section-label">Milestones</div>
+  <h2 style="margin-top:14px;">Voice-specific milestone ladder</h2>
+  <ol class="milestone-ladder">
+    <li>
+      <div class="m-title">Foundation — higher pitch on command</div>
+      <div class="m-body">Can produce a higher pitch when asked, even briefly. Doesn't need to sustain. Doesn't need to sound natural yet. Just accessible. <span class="phase-badge" data-phase="1,2">P1–2</span></div>
+    </li>
+    <li>
+      <div class="m-title">Control — sustain through a full sentence</div>
+      <div class="m-body">Can hold the higher pitch through an entire sentence without dropping back at the end. Reading aloud is easier than conversation at this stage; both count. <span class="phase-badge" data-phase="2,3">P2–3</span></div>
+    </li>
+    <li>
+      <div class="m-title">Resonance — forward placement</div>
+      <div class="m-body">The voice sits in a smaller, more forward space in the face rather than chest. This is where the feminine quality actually lives; pitch alone is not enough. <span class="phase-badge" data-phase="3,4">P3–4</span></div>
+    </li>
+    <li>
+      <div class="m-title">Intonation — natural musical shape</div>
+      <div class="m-body">Upward lilt at phrase ends, broader pitch range within sentences, varied rhythm. Masculine speech patterns tend to be flatter; feminine patterns are more melodic. <span class="phase-badge" data-phase="3,4">P3–4</span></div>
+    </li>
+    <li>
+      <div class="m-title">Integration — controlled environments</div>
+      <div class="m-body">Passing on phone calls, in short interactions with strangers, during coffee orders. Controlled stakes, short duration. The first time the voice works in public. <span class="phase-badge" data-phase="4,5">P4–5</span></div>
+    </li>
+    <li>
+      <div class="m-title">Sustain — full conversation without fatigue</div>
+      <div class="m-body">Can hold the voice for a long conversation without the voice slipping back or becoming tired. Voice endurance — similar to how a runner builds mileage. <span class="phase-badge" data-phase="5">P5</span></div>
+    </li>
+    <li>
+      <div class="m-title">Emotional range — voice works under stress</div>
+      <div class="m-body">Voice holds while laughing, arguing, being excited, being angry, being sad. The hardest stage because emotion accesses older patterns. <span class="phase-badge" data-phase="5,6">P5–6</span></div>
+    </li>
+    <li>
+      <div class="m-title">Default — automatic without conscious effort</div>
+      <div class="m-body">The voice comes out without thinking about it. Old patterns might still emerge under extreme stress or exhaustion, but normal operation is automatic. <span class="phase-badge" data-phase="6">P6</span></div>
+    </li>
+  </ol>
+
+  <div class="section-label">Practice structure</div>
+  <h2 style="margin-top:14px;">How often, how long, in what form</h2>
+  <ul>
+    <li><strong>Frequency:</strong> short daily is better than long occasional. 10–15 minutes a day beats an hour once a week.</li>
+    <li><strong>Format:</strong> read aloud, then record, then listen back. Record → listen → adjust is the loop; recording alone isn't practice.</li>
+    <li><strong>Environment:</strong> alone, private, not when tired (fatigue blocks access to new patterns).</li>
+    <li><strong>What to read:</strong> varied material. Neutral text (news articles), dialogue (plays, novels with conversation), technical material (where you'd normally revert to "work voice").</li>
+    <li><strong>Conversation practice:</strong> separate from reading practice. Solo conversation (talking to yourself, narrating tasks) is the bridge between reading and actual conversation.</li>
+    <li><strong>Rest the voice when needed.</strong> If it's tired or strained, stop. Push through = damage, not progress.</li>
+  </ul>
+
+  <div class="section-label">Resources</div>
+  <h2 style="margin-top:14px;">Where to learn — tiered</h2>
+
+  <h3>Free</h3>
+  <ul>
+    <li><strong>TransVoiceLessons on YouTube</strong> (Zheanna Erose) — the most comprehensive free resource. Start here. Lessons on pitch, resonance, intonation, and the distinction between them. Specifically designed for trans femme voices.</li>
+    <li><strong>Selene iO (YouTube)</strong> — similar space, different voice. Worth it for alternate explanations if TransVoiceLessons' framing isn't clicking.</li>
+    <li><strong>TG-related subreddits</strong> (r/transvoice) — community feedback on recordings. Uneven in quality but free and interactive.</li>
+  </ul>
+
+  <h3>Paid (software)</h3>
+  <ul>
+    <li><strong>Christella VoiceUp app</strong> — structured exercises, tracks pitch. ~$10 one-time or similar.</li>
+    <li><strong>Voice Tools / Voice Pitch Analyzer apps</strong> — free or cheap, help with pitch feedback in real time. Phone apps.</li>
+  </ul>
+
+  <h3>Professional</h3>
+  <ul>
+    <li><strong>Speech-language pathologist (SLP)</strong> with trans voice experience — the gold standard. Some offer remote sessions. Look for "gender-affirming voice therapy" as a specialty. Typical rates $80–200/session.</li>
+    <li><strong>TransVoiceLessons 1:1 sessions</strong> — direct from Zheanna. Waitlisted, expensive, worth it for serious work.</li>
+    <li><strong>Your insurance may cover SLP visits</strong> — worth checking, especially post-HRT access when medical infrastructure is more defined.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Professional help is worth real investment at the right stage</strong>
+    Free resources are enough to build through the first few milestones. Around the "resonance" and "intonation" stages (milestones 3–4), an SLP with trans voice experience can compress months of trial-and-error into weeks of targeted work. Budget a few sessions in Phase 4–5 if possible.
+  </div>
+
+  <div class="section-label">Current state</div>
+  <h2 style="margin-top:14px;">Where you are — self-assessment, dated</h2>
+  <div class="state-block">
+    <div class="state-date">Undated — to be filled in</div>
+    <p>
+      Which milestones are at which stage. Update roughly every month or two — not more often (progress is too slow to show weekly) and not less often (the log stops being useful).
+    </p>
+    <ul>
+      <li>Foundation — (stage)</li>
+      <li>Control — (stage)</li>
+      <li>Resonance — (stage)</li>
+      <li>Intonation — (stage)</li>
+      <li>Integration — (stage)</li>
+      <li>Sustain — (stage)</li>
+      <li>Emotional range — (stage)</li>
+      <li>Default — (stage)</li>
+    </ul>
+  </div>
+
+  <div class="section-label">Next target</div>
+  <h2 style="margin-top:14px;">What you're working on right now</h2>
+  <div class="state-block">
+    <div class="state-date">Undated — to be filled in</div>
+    <p>
+      One concrete target at a time. "Move Control from Deliberate to Supported by the end of the month." Specific, dated, honest. If it doesn't happen, update the target with what did happen and why — the honesty matters more than the achievement.
+    </p>
+  </div>
+
+  <div class="section-label">Log</div>
+  <h2 style="margin-top:14px;">Running notes</h2>
+  <p>
+    Whatever observations future-you would want to know. Not a daily journal — entries only when something is worth recording. Things that have worked, things that haven't, recordings to revisit, sessions with an SLP, setbacks and what triggered them.
+  </p>
+  <div class="state-block">
+    <div class="state-date">Undated — to be filled in</div>
+    <p>
+      Empty for now. First entry will be the first meaningful milestone or observation.
+    </p>
+  </div>
+
+  <footer>Voice · Training</footer>
+
+</div>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/script.js"></script>
+<script>MasterPlan.renderStatusBar({ pathPrefix: '../' });</script>
+</body>
+</html>
