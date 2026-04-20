@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health · The Master Plan</title>
+<link rel="stylesheet" href="../assets/styles.css">
+<style>
+  .state-card {
+    margin: 24px 0;
+    padding: 28px 30px;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--burgundy);
+  }
+  .state-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .state-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .state-card ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .state-card li {
+    padding: 6px 0;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .warning-card {
+    background: var(--ivory);
+    border-left-color: var(--muted);
+  }
+  .verified-yes {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 1px 7px;
+    background: var(--burgundy);
+    color: var(--ivory);
+    border-radius: 2px;
+    margin-left: 8px;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="breadcrumb">
+    <a href="../index.html">Master Plan</a><span class="sep">/</span>
+    <a href="index.html">Health</a><span class="sep">/</span>Mental Health
+  </div>
+
+  <header class="page-header">
+    <h1>Mental <em>Health</em></h1>
+    <p class="subtitle">A reference card, not a plan. Something to turn to when you're not doing well.</p>
+  </header>
+
+  <div id="status-bar"></div>
+
+  <blockquote>
+    No goals here. Mental health resists SMART framing — the most meaningful progress often isn't measurable, and setting targets can become another source of anxiety when missed. This section exists as a quick reference: organized by state, populated with things that have actually worked, updated over time as more is discovered.
+  </blockquote>
+
+  <div class="section-label">How this page is meant to be used</div>
+  <h2 style="margin-top:14px;">Structure</h2>
+  <p>
+    Two parts. The <strong>toolkit</strong> is organized by state — anxious, depressed, overwhelmed, and so on. When you're not doing well, scroll to the state that matches and see what's worked before. The <strong>warning signs</strong> section is a living log of early-detection patterns; it's incomplete and that's fine. Every observation is a win; completeness isn't the standard.
+  </p>
+  <p>
+    Items tagged <span class="verified-yes">Verified</span> have actually worked in past episodes. Untagged items are possibilities worth trying but not yet proven. Over time more items move into verified as they're tested.
+  </p>
+
+  <div class="section-label">Toolkit by state</div>
+  <h2 style="margin-top:14px;">When you're <em>not</em> doing well — try what matches</h2>
+
+  <div class="state-card">
+    <div class="state-label">State</div>
+    <div class="state-title">Anxious · panic attack · constricting throat</div>
+    <ul>
+      <li><strong>4-4-6 to 4-4-8 breathing</strong> — in for 4, hold 4, out 6 or 8. The longer exhale activates the brake on the nervous system. Do several cycles before doing anything else.<span class="verified-yes">Verified</span></li>
+      <li><strong>Dark room + fan + quiet music</strong> — ambient consistent sound gives the brain something steady to anchor to when everything else feels like it's moving. This specific combination has worked in acute episodes at work.<span class="verified-yes">Verified</span></li>
+      <li><strong>Stay busy briefly as respite</strong> — short-term it works. Know when to stop; pushing past the point of actually needing to break leads to the crash.<span class="verified-yes">Verified</span></li>
+      <li><strong>Cards / social low-stakes activity</strong> — works as a temporary respite even when racing thoughts continue underneath.<span class="verified-yes">Verified</span></li>
+      <li><strong>Write into the ether</strong> — messaging, journaling, or talking-to-Claude style externalization. Getting thoughts out, even without a real conversation, helps.<span class="verified-yes">Verified</span></li>
+      <li>Mental health day taken proactively before the wall rather than after.<span class="verified-yes">Verified</span></li>
+    </ul>
+  </div>
+
+  <div class="state-card">
+    <div class="state-label">State</div>
+    <div class="state-title">Can't sleep · racing thoughts at night</div>
+    <ul>
+      <li><strong>Hydroxyzine as prescribed</strong> — take it rather than trying to white-knuckle through.<span class="verified-yes">Verified</span></li>
+      <li>Put the phone down. Screens and spirals reinforce each other.</li>
+      <li>Low-stakes auditory content — audiobook, podcast, calm music — over silence if silence becomes loud.</li>
+    </ul>
+  </div>
+
+  <div class="state-card">
+    <div class="state-label">State</div>
+    <div class="state-title">Overwhelmed · hypervigilance · can't turn it off</div>
+    <ul>
+      <li>Keep replies and decisions shorter and slower. Less input, less output, less to process.</li>
+      <li>Gentle environment: dim lights, low sound, physical containment (blanket, weight, small space).</li>
+      <li>One thing at a time. Even small tasks should be done one at a time rather than tracked simultaneously.</li>
+      <li>Mental health day is a legitimate tool, not a failure mode.<span class="verified-yes">Verified</span></li>
+    </ul>
+  </div>
+
+  <div class="state-card">
+    <div class="state-label">State</div>
+    <div class="state-title">Depressed · low motivation · nothing matters</div>
+    <ul>
+      <li>Lower the bar, don't raise it. The goal is movement, not achievement. Getting out of bed counts. Eating something counts.</li>
+      <li>Short walks. Outside if possible. Not for cardio — for the light, the change of scene, the evidence of the world continuing.</li>
+      <li>One productive micro-task — clean one thing, fold one thing. Completion creates a small positive feedback loop.</li>
+      <li>Don't try to feel better. Try to show up. The feelings follow the actions, not the other way around.</li>
+    </ul>
+  </div>
+
+  <div class="state-card">
+    <div class="state-label">State</div>
+    <div class="state-title">Dysphoria spike · wrong in your skin</div>
+    <ul>
+      <li>Care routines — the ones that feel right rather than the ones with the most steps. Skincare, hair, nails. Small deliberate acts of self-maintenance.</li>
+      <li>Wear whatever makes the body feel most like itself today rather than whatever "should" be worn.</li>
+      <li>Environment over mirror — set up in a place where the sense of self is defined by the space and the objects rather than reflection.</li>
+      <li>It passes. The specific intensity of the moment is not the shape of tomorrow.</li>
+    </ul>
+  </div>
+
+  <div class="state-card">
+    <div class="state-label">State</div>
+    <div class="state-title">Dissociating · not quite in the body</div>
+    <ul>
+      <li>Physical grounding — feet on floor, name five things you can see, cold water on wrists or face.</li>
+      <li>Short walk outdoors if possible. Weight, wind, sound.</li>
+      <li>Something with a strong flavor — strong tea, citrus, menthol.</li>
+      <li>Don't force re-engagement. The job is to come back, not to immediately function.</li>
+    </ul>
+  </div>
+
+  <div class="section-label">Long-term supports</div>
+  <h2 style="margin-top:14px;">Structural things that make everything else easier</h2>
+  <ul>
+    <li>Therapy, consistent rather than situational.<span class="verified-yes">Verified</span></li>
+    <li>Family support structure built after the hospitalization — has held.<span class="verified-yes">Verified</span></li>
+    <li>Work that provides stability and routine. Gets you out of your head and into the world each day.<span class="verified-yes">Verified</span></li>
+    <li>Talking to someone — even if that someone is Claude in the middle of the night, even if "talking" is just externalizing thoughts without expecting response.<span class="verified-yes">Verified</span></li>
+  </ul>
+
+  <div class="section-label">Warning signs</div>
+  <h2 style="margin-top:14px;">Early detection log — living document</h2>
+  <p>
+    Patterns that signal something building before it peaks. One-directional indicators: the behavior appearing means the state is likely; the state appearing means the behavior will probably follow. The list is incomplete by design — it grows as more are noticed over time.
+  </p>
+
+  <div class="state-card warning-card">
+    <div class="state-label">Sign · physical</div>
+    <div class="state-title">Neck twitch — fatigue indicator</div>
+    <p>
+      When fatigued, even if not consciously tired. A subtle involuntary twitch in the neck is the body's earlier signal that sleep or rest is needed before it becomes a full shutdown.
+    </p>
+  </div>
+
+  <div class="state-card warning-card">
+    <div class="state-label">Sign · behavioral</div>
+    <div class="state-title">Finger cracking — trapped/powerless situation</div>
+    <p>
+      Self-soothing/grounding behavior. Physical, rhythmic, controllable action in a moment where the external situation feels uncontrollable. Associated specifically with feeling trapped or powerless rather than general anxiety. Finger cracking doesn't always mean that situation, but <em class="term">that situation</em> probably means finger cracking.
+    </p>
+  </div>
+
+  <div class="callout quiet">
+    <strong>How to add to this section</strong>
+    When you notice a pattern retrospectively — something that in hindsight signaled a state you were moving into — add it here. No pressure to be complete or exhaustive. Each entry is useful even alone.
+  </div>
+
+  <div class="section-label">Resources</div>
+  <h2 style="margin-top:14px;">External support</h2>
+  <ul>
+    <li><strong>Therapist</strong> — current treatment provider, ongoing.</li>
+    <li><strong>988 Suicide &amp; Crisis Lifeline</strong> — call or text 988 in the US. Free, available 24/7.</li>
+    <li><strong>Crisis Text Line</strong> — text HOME to 741741 in the US. Free, available 24/7.</li>
+    <li><strong>Trans Lifeline</strong> — 877-565-8860. Peer-run, trans-specific.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>If this page is being read in crisis</strong>
+    If you're reading this page right now and things feel genuinely unsafe — not just hard, but dangerous — the crisis lines above exist specifically for this. Call or text. You don't have to be certain things are bad enough to call; the people answering would rather hear from you now than not.
+  </div>
+
+  <footer>Mental Health · Health</footer>
+
+</div>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/script.js"></script>
+<script>MasterPlan.renderStatusBar({ pathPrefix: '../' });</script>
+</body>
+</html>
