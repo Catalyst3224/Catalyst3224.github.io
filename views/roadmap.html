@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap · The Master Plan</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <a class="back-link" href="../index.html">← Back to home</a>
+
+  <header class="page-header">
+    <h1><em>Roadmap</em></h1>
+    <p class="subtitle">Chronological overview across six phases</p>
+  </header>
+
+  <div id="status-bar"></div>
+
+  <div id="roadmap-content"></div>
+
+  <footer>Pulled from <code>assets/data.js</code> — the canonical source</footer>
+
+</div>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/script.js"></script>
+<script>
+  MasterPlan.renderStatusBar({ pathPrefix: '../' });
+
+  const SECTION_LABELS = {
+    health: 'Health', care: 'Care', wardrobe: 'Wardrobe', training: 'Training',
+  };
+
+  function renderRoadmap() {
+    const container = document.getElementById('roadmap-content');
+    const current = MasterPlan.getCurrentPhase();
+
+    MasterPlanData.phases.forEach(phase => {
+      const h2 = document.createElement('h2');
+      h2.textContent = `Phase ${phase.n} — ${phase.name}`;
+      if (phase.n === current) {
+        const badge = document.createElement('span');
+        badge.className = 'phase-badge current';
+        badge.textContent = 'Current';
+        badge.style.marginLeft = '14px';
+        badge.style.fontSize = '10px';
+        h2.appendChild(badge);
+      }
+      container.appendChild(h2);
+
+      const meta = document.createElement('h4');
+      meta.textContent = `Months ${phase.months}`;
+      container.appendChild(meta);
+
+      const p = document.createElement('p');
+      p.textContent = phase.summary;
+      p.style.fontStyle = 'italic';
+      p.style.color = 'var(--muted)';
+      p.style.marginBottom = '20px';
+      container.appendChild(p);
+
+      // Items for this phase, grouped by section
+      const items = MasterPlanData.byPhase(phase.n);
+      const groups = MasterPlanData.groupBySection(items);
+      const order = ['care', 'health', 'wardrobe', 'training'];
+
+      order.forEach(sec => {
+        const list = groups[sec];
+        if (!list || list.length === 0) return;
+        const h3 = document.createElement('h3');
+        h3.textContent = SECTION_LABELS[sec];
+        container.appendChild(h3);
+        const ul = document.createElement('ul');
+        list.forEach(item => {
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = '../' + item.href;
+          link.textContent = item.text;
+          li.appendChild(link);
+          ul.appendChild(li);
+        });
+        container.appendChild(ul);
+      });
+    });
+  }
+
+  renderRoadmap();
+  // Roadmap doesn't re-render on phase change (it's all-phases), but update the "current" badge
+  document.addEventListener('phase-change', () => {
+    document.getElementById('roadmap-content').innerHTML = '';
+    renderRoadmap();
+  });
+</script>
+</body>
+</html>

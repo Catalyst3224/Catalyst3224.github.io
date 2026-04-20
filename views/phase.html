@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase View · The Master Plan</title>
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="phase-view">
+
+<div class="wrap">
+
+  <a class="back-link" href="../index.html">← Back to home</a>
+
+  <header class="page-header">
+    <h1><em>Phase</em> View</h1>
+    <p class="subtitle">Everything happening in the selected phase, across all sections</p>
+  </header>
+
+  <div id="status-bar"></div>
+
+  <div id="phase-summary"></div>
+
+  <div id="phase-content"></div>
+
+  <footer>Pulled from <code>assets/data.js</code> — the canonical source</footer>
+
+</div>
+
+<script src="../assets/data.js"></script>
+<script src="../assets/script.js"></script>
+<script>
+  MasterPlan.renderStatusBar({ pathPrefix: '../' });
+
+  const SECTION_LABELS = {
+    health:   'Health',
+    care:     'Personal Care',
+    wardrobe: 'Wardrobe',
+    training: 'Training',
+  };
+  const SUBSECTION_LABELS = {
+    // care
+    skincare: 'Skincare',
+    hair: 'Hair',
+    nails: 'Nails',
+    makeup: 'Makeup',
+    fragrance: 'Fragrance',
+    supplements: 'Supplements',
+    finances: 'Finances',
+    // health
+    fitness: 'Fitness',
+    'medical-hrt': 'Medical / HRT',
+    diet: 'Diet',
+    'mental-health': 'Mental Health',
+    // wardrobe
+    capsule: 'Capsule',
+    wigs: 'Wigs',
+    glasses: 'Glasses',
+    // training
+    voice: 'Voice',
+    posture: 'Posture & Movement',
+    presentation: 'Presentation-adjacent',
+  };
+
+  function render(phase) {
+    const items = MasterPlanData.byPhase(phase);
+    const groups = MasterPlanData.groupBySection(items);
+
+    // Summary
+    const info = MasterPlanData.phases.find(p => p.n === phase);
+    const summary = document.getElementById('phase-summary');
+    summary.innerHTML = info ? `
+      <blockquote>
+        <strong style="font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--burgundy);display:block;margin-bottom:6px;">Phase ${info.n} · ${info.name} · Months ${info.months}</strong>
+        ${info.summary}
+      </blockquote>
+    ` : '';
+
+    // Content
+    const container = document.getElementById('phase-content');
+    const order = ['care', 'health', 'wardrobe', 'training'];
+    container.innerHTML = '';
+
+    order.forEach(sec => {
+      const list = groups[sec];
+      if (!list || list.length === 0) return;
+
+      const h2 = document.createElement('h2');
+      h2.textContent = SECTION_LABELS[sec] || sec;
+      container.appendChild(h2);
+
+      // Group items within section by subsection
+      const subGroups = {};
+      list.forEach(item => {
+        const key = item.subsection || '_';
+        if (!subGroups[key]) subGroups[key] = [];
+        subGroups[key].push(item);
+      });
+
+      Object.keys(subGroups).forEach(subKey => {
+        if (subKey !== '_') {
+          const h3 = document.createElement('h3');
+          h3.textContent = SUBSECTION_LABELS[subKey] || subKey;
+          container.appendChild(h3);
+        }
+        const ul = document.createElement('ul');
+        subGroups[subKey].forEach(item => {
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = '../' + item.href;
+          link.textContent = item.text;
+          li.appendChild(link);
+          if (item.kind) {
+            const kind = document.createElement('span');
+            kind.className = 'tier-label tier-' + (item.kind === 'purchase' ? 'invest' : item.kind === 'milestone' ? 'mid' : 'budget');
+            kind.style.marginLeft = '10px';
+            kind.textContent = item.kind;
+            li.appendChild(kind);
+          }
+          ul.appendChild(li);
+        });
+        container.appendChild(ul);
+      });
+    });
+
+    if (container.innerHTML === '') {
+      container.innerHTML = '<p class="muted">No items tagged for this phase yet.</p>';
+    }
+  }
+
+  // Initial render + re-render on phase change
+  render(MasterPlan.getCurrentPhase());
+  document.addEventListener('phase-change', e => render(e.detail.phase));
+</script>
+</body>
+</html>
